@@ -5,7 +5,7 @@ from PIL import Image, ImageFilter
 import sys
 
 my_img_fldr = r".\my_imgs\\"
-my_img_file = r"mr_mrs.jpg"
+my_img_file = r"tatras"
 try:
     my_img = Image.open(my_img_fldr+my_img_file)
 except IOError:
