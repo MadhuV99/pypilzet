@@ -1,7 +1,6 @@
-# blur_image.py
+# grayscale.py
 #!/usr/bin/python
-
-from PIL import Image, ImageFilter
+from PIL import Image
 import sys
 
 my_img_fldr = r".\my_imgs\\"
@@ -16,13 +15,13 @@ except IOError:
     print("Unable to load image")    
     sys.exit(1)
 
-my_img_blur = my_img.filter(ImageFilter.BLUR)
-my_img_blur.show()
+my_img_bnw = my_img.convert('L')
+my_img_bnw.show()
 
-my_out_pic = my_img_pic+"_blur"
+my_out_pic = my_img_pic+"_bnw"
 my_out_file = my_img_fldr+my_out_pic+my_img_format
 try:
-    my_img_blur.save(my_out_file)
+    my_img_bnw.save(my_out_file)
 except IOError:
     print("Unable to save image")    
     sys.exit(1)    
